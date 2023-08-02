@@ -1,2 +1,2 @@
-# C#_Learning_Path_Tasks
+# C# Learning Path Tasks
 A2SV Backend Learning Tasks Repo
