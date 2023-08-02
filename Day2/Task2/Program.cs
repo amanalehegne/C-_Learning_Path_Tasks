@@ -18,6 +18,23 @@ class Programs
         library.AddMediaItem(mediaItem2);
 
         library.PrintCatalog();
+
+        search(library);
+
         Console.ReadLine();
+    }
+
+    public static void search(Library library)
+    {
+        Console.Write("Search Term: ");
+        string? input = Console.ReadLine();
+        bool checkBook = library.SearchBooks(input);
+        bool checkMedia = library.SearchMedia(input);
+
+        if (checkBook)
+            Console.WriteLine("Found In Books");
+        if (checkMedia)
+            Console.WriteLine("Found In Media");
+
     }
 }

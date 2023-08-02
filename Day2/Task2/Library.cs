@@ -103,7 +103,6 @@ class Library
     {
         if (mediaItems.Count > 0)
         {
-            Console.WriteLine("\nMedia Items");
             foreach (MediaItem mediaItem in mediaItems)
             {
                 if (input == mediaItem.Title)
