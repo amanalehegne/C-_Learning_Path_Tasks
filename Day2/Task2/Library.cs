@@ -85,4 +85,31 @@ class Library
 
 
     }
+
+    public bool SearchBooks(string input)
+    {
+        if (books.Count > 0)
+        {
+            foreach (Book book in books)
+            {
+                if (input == book.Title || input == book.Author)
+                    return true;
+            }
+        }
+        return false;
+    }
+
+    public bool SearchMedia(string input)
+    {
+        if (mediaItems.Count > 0)
+        {
+            Console.WriteLine("\nMedia Items");
+            foreach (MediaItem mediaItem in mediaItems)
+            {
+                if (input == mediaItem.Title)
+                    return true;
+            }
+        }
+        return false;
+    }
 }
