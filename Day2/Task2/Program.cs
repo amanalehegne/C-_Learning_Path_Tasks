@@ -28,13 +28,7 @@ class Programs
     {
         Console.Write("Search Term: ");
         string? input = Console.ReadLine();
-        bool checkBook = library.SearchBooks(input);
-        bool checkMedia = library.SearchMedia(input);
-
-        if (checkBook)
-            Console.WriteLine("Found In Books");
-        if (checkMedia)
-            Console.WriteLine("Found In Media");
-
+        library.SearchBooks(input);
+        library.SearchMedia(input);
     }
 }

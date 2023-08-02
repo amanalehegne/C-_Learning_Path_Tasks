@@ -86,29 +86,42 @@ class Library
 
     }
 
-    public bool SearchBooks(string input)
+    public void SearchBooks(string input)
     {
+        bool check = false;
+        Console.WriteLine("\nBooks Search Result:");
         if (books.Count > 0)
         {
             foreach (Book book in books)
             {
                 if (input == book.Title || input == book.Author)
-                    return true;
+                {
+                    Console.WriteLine($"Title: {book.Title} | Author: {book.Author} | ISBN: {book.ISBN} | Publication Year: {book.PublicationYear}");
+                    check = true;
+                }
             }
         }
-        return false;
+        if (check == false)
+            Console.WriteLine("Not Found In Books");
     }
 
-    public bool SearchMedia(string input)
+    public void SearchMedia(string input)
     {
+        bool check = false;
+        Console.WriteLine("\nMedia Search Result:");
         if (mediaItems.Count > 0)
         {
             foreach (MediaItem mediaItem in mediaItems)
             {
                 if (input == mediaItem.Title)
-                    return true;
+                {
+                    Console.WriteLine($"Title: {mediaItem.Title} | Media Type: {mediaItem.MediaType} | Duration: {mediaItem.Duration}");
+                    check = true;
+                }
+
             }
         }
-        return false;
+        if (check == false)
+            Console.WriteLine("Not Found In Media");
     }
 }
