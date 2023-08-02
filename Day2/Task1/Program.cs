@@ -44,11 +44,10 @@ class Programs
     public static Shapes GetShape()
     {
         Shapes shape;
-        string input;
         while (true)
         {
             Console.Write($"Enter Shape: ");
-            input = Console.ReadLine().ToLower();
+            string input = Console.ReadLine().ToLower();
 
             if (input == "circle")
             {
@@ -73,7 +72,6 @@ class Programs
             Console.WriteLine("Available only for Circle, Rectangle, and Triangle! Try Again.");
 
         }
-        shape.Name = input;
         return shape;
     }
 }

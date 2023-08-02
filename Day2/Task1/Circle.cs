@@ -6,6 +6,7 @@ class Circle : Shapes
 
     public Circle(double radius)
     {
+        this.Name = "Circle";
         this.radius = radius;
     }
 

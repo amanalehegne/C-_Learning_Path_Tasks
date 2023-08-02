@@ -7,6 +7,7 @@ class Triangle : Shapes
 
     public Triangle(double base_, double height)
     {
+        this.Name = "Triangle";
         this.base_ = base_;
         this.height = height;
     }

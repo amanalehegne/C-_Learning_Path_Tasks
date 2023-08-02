@@ -7,6 +7,7 @@ class Rectangle : Shapes
 
     public Rectangle(double width, double height)
     {
+        this.Name = "Rectangle";
         this.width = width;
         this.height = height;
     }
