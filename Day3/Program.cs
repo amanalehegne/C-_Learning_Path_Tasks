@@ -10,6 +10,7 @@ class Program
         //await manager.WriteToFileAsync(task);
         await manager.ReadFileAsync();
         await manager.FilterFileAsync((Category)10);
+
     }
 }
 
