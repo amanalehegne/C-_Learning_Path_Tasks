@@ -4,6 +4,7 @@ using BlogAppAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using System.Linq;
+using BlogAppAPI.Requests;
 
 namespace BlogAppAPI.Controllers
 {
@@ -37,12 +38,18 @@ namespace BlogAppAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(Comment comment)
+        public async Task<IActionResult> Post(CommentRequest commentRequest)
         {
-            var post = await _context.Posts.FindAsync(comment.PostId);
+            var postExists = await _context.Posts.AnyAsync(p => p.Id == commentRequest.PostId);
 
-            if (post == null)
+            if (!postExists)
                 return BadRequest("Invalid PostId");
+
+            var comment = new Comment
+            {
+                Text = commentRequest.Text,
+                PostId = commentRequest.PostId
+            };
 
             _context.Comments.Add(comment);
             await _context.SaveChangesAsync();
@@ -50,8 +57,9 @@ namespace BlogAppAPI.Controllers
             return CreatedAtAction(nameof(Get), new { id = comment.Id }, comment);
         }
 
+
         [HttpPatch("{id:int}")]
-        public async Task<IActionResult> Patch(int id, [FromBody] Comment updatedComment)
+        public async Task<IActionResult> Patch(int id, [FromBody] UpdateCommentRequest updatedCommentRequest) // Use CommentRequest class
         {
             var comment = await _context.Comments.FirstOrDefaultAsync(c => c.Id == id);
 
@@ -59,7 +67,7 @@ namespace BlogAppAPI.Controllers
                 return NotFound("No Such Comment");
 
             // You Can Only Change The Text
-            comment.Text = updatedComment.Text;
+            comment.Text = updatedCommentRequest.Text;
             await _context.SaveChangesAsync();
 
             return Ok(comment);

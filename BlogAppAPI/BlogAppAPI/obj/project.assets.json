@@ -1508,11 +1508,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/amanuelwubete/Desktop/ASP_Project/BlogAppAPI/BlogAppAPI/BlogAppAPI.csproj",
+      "projectUniqueName": "/Users/amanuelwubete/Desktop/BlogAppAPI/BlogAppAPI/BlogAppAPI.csproj",
       "projectName": "BlogAppAPI",
-      "projectPath": "/Users/amanuelwubete/Desktop/ASP_Project/BlogAppAPI/BlogAppAPI/BlogAppAPI.csproj",
+      "projectPath": "/Users/amanuelwubete/Desktop/BlogAppAPI/BlogAppAPI/BlogAppAPI.csproj",
       "packagesPath": "/Users/amanuelwubete/.nuget/packages/",
-      "outputPath": "/Users/amanuelwubete/Desktop/ASP_Project/BlogAppAPI/BlogAppAPI/obj/",
+      "outputPath": "/Users/amanuelwubete/Desktop/BlogAppAPI/BlogAppAPI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/amanuelwubete/.nuget/NuGet/NuGet.Config"

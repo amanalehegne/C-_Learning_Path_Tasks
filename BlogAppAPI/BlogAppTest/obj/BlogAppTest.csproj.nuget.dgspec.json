@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/amanuelwubete/Desktop/BlogAppAPI/BlogAppAPI/BlogAppAPI.csproj": {}
+    "/Users/amanuelwubete/Desktop/BlogAppAPI/BlogAppTest/BlogAppTest.csproj": {}
   },
   "projects": {
-    "/Users/amanuelwubete/Desktop/BlogAppAPI/BlogAppAPI/BlogAppAPI.csproj": {
+    "/Users/amanuelwubete/Desktop/BlogAppAPI/BlogAppTest/BlogAppTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/amanuelwubete/Desktop/BlogAppAPI/BlogAppAPI/BlogAppAPI.csproj",
-        "projectName": "BlogAppAPI",
-        "projectPath": "/Users/amanuelwubete/Desktop/BlogAppAPI/BlogAppAPI/BlogAppAPI.csproj",
+        "projectUniqueName": "/Users/amanuelwubete/Desktop/BlogAppAPI/BlogAppTest/BlogAppTest.csproj",
+        "projectName": "BlogAppTest",
+        "projectPath": "/Users/amanuelwubete/Desktop/BlogAppAPI/BlogAppTest/BlogAppTest.csproj",
         "packagesPath": "/Users/amanuelwubete/.nuget/packages/",
-        "outputPath": "/Users/amanuelwubete/Desktop/BlogAppAPI/BlogAppAPI/obj/",
+        "outputPath": "/Users/amanuelwubete/Desktop/BlogAppAPI/BlogAppTest/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/amanuelwubete/.nuget/NuGet/NuGet.Config"
@@ -38,29 +38,25 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
+            "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[7.0.10, )"
+              "version": "[17.1.0, )"
             },
-            "Microsoft.EntityFrameworkCore.Design": {
+            "coverlet.collector": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.10, )"
+              "version": "[3.1.2, )"
             },
-            "Microsoft.EntityFrameworkCore.Tools": {
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.10, )"
-            },
-            "Npgsql.EntityFrameworkCore.PostgreSQL": {
-              "target": "Package",
-              "version": "[7.0.4, )"
-            },
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[6.5.0, )"
+              "version": "[2.4.3, )"
             }
           },
           "imports": [
@@ -75,9 +71,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

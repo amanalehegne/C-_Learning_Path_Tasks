@@ -4,6 +4,7 @@ using BlogAppAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using BlogAppAPI.Requests;
 
 namespace BlogAppAPI.Controllers
 {
@@ -21,14 +22,14 @@ namespace BlogAppAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var posts = await _context.Posts.Include(p => p.Comments).ToListAsync();
+            var posts = await _context.Posts.ToListAsync();
             return Ok(posts);
         }
 
         [HttpGet("{id:int}")]
         public async Task<IActionResult> Get(int id)
         {
-            var post = await _context.Posts.Include(p => p.Comments).FirstOrDefaultAsync(p => p.Id == id);
+            var post = await _context.Posts.FirstOrDefaultAsync(p => p.Id == id);
 
             if (post == null)
                 return BadRequest("Invalid Id");
@@ -37,9 +38,15 @@ namespace BlogAppAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(Post post)
+        public async Task<IActionResult> Post(PostRequest postRequest)
         {
-            post.Comments = new HashSet<Comment>(); // Ensure comments collection is initialized
+            var post = new Post
+            {
+                Title = postRequest.Title,
+                Content = postRequest.Content,
+                Comments = new HashSet<Comment>()
+            };
+
             await _context.Posts.AddAsync(post);
             await _context.SaveChangesAsync();
 
@@ -47,15 +54,15 @@ namespace BlogAppAPI.Controllers
         }
 
         [HttpPatch("{id:int}")]
-        public async Task<IActionResult> Patch(int id, [FromBody] Post updatedPost)
+        public async Task<IActionResult> Patch(int id, [FromBody] PostRequest updatedPostRequest) // Use PostRequest class
         {
             var post = await _context.Posts.FirstOrDefaultAsync(p => p.Id == id);
 
             if (post == null)
                 return BadRequest("No Such Post");
 
-            post.Title = updatedPost.Title;
-            post.Content = updatedPost.Content;
+            post.Title = updatedPostRequest.Title;
+            post.Content = updatedPostRequest.Content;
             await _context.SaveChangesAsync();
 
             return NoContent();
