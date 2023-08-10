@@ -1,0 +1,5 @@
+/Users/amanuelwubete/Desktop/BlogAppAPI/BlogAppTest/obj/Debug/net6.0/BlogAppTest.csproj.AssemblyReference.cache
+/Users/amanuelwubete/Desktop/BlogAppAPI/BlogAppTest/obj/Debug/net6.0/BlogAppTest.GeneratedMSBuildEditorConfig.editorconfig
+/Users/amanuelwubete/Desktop/BlogAppAPI/BlogAppTest/obj/Debug/net6.0/BlogAppTest.AssemblyInfoInputs.cache
+/Users/amanuelwubete/Desktop/BlogAppAPI/BlogAppTest/obj/Debug/net6.0/BlogAppTest.AssemblyInfo.cs
+/Users/amanuelwubete/Desktop/BlogAppAPI/BlogAppTest/obj/Debug/net6.0/BlogAppTest.csproj.CoreCompileInputs.cache
